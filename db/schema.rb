@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_03_04_021814) do
+ActiveRecord::Schema[8.0].define(version: 2025_03_04_022537) do
+  create_table "adoptions", force: :cascade do |t|
+    t.integer "dog_id", null: false
+    t.integer "user_id", null: false
+    t.datetime "adoption_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["dog_id"], name: "index_adoptions_on_dog_id"
+    t.index ["user_id"], name: "index_adoptions_on_user_id"
+  end
+
   create_table "breeds", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -40,5 +50,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_04_021814) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "adoptions", "dogs"
+  add_foreign_key "adoptions", "users"
   add_foreign_key "dogs", "breeds"
 end
