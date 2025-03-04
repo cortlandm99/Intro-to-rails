@@ -4,10 +4,14 @@ one:
   name: MyString
   age: 1
   gender: MyString
+  description: MyText
   image_url: MyString
+  breed: one
 
 two:
   name: MyString
   age: 1
   gender: MyString
+  description: MyText
   image_url: MyString
+  breed: two
