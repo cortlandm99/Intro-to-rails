@@ -1,7 +1,7 @@
 class Dog < ApplicationRecord
   belongs_to :breed
 
-  has_one_attached :image_url
+  has_one_attached :image
 
   has_many :adoptions
   has_many :users, through: :adoptions
