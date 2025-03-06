@@ -12,3 +12,10 @@ breed_url = "https://dog.ceo/api/breeds/list/all"
 breed_uri = URI(breed_url)
 breed_response = Net::HTTP.get(breed_uri)
 JSON.parse(breed_response)['message'].keys
+
+def fetch_breed_image(breed)
+  image_url = "https://dog.ceo/api/breed/#{breed}/images/random"
+  image_uri = URI(image_url)
+  image_response = Net::HTTP.get(image_uri)
+  JSON.parse(image_response)['message']
+end
