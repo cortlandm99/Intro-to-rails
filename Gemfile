@@ -43,6 +43,7 @@ gem "faker"
 gem "rubocop"
 gem "activeadmin"
 gem "devise"
+gem "sass-rails"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
