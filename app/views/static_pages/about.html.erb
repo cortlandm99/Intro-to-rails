@@ -1,2 +1,52 @@
-<h1>StaticPages#about</h1>
-<p>Find me in app/views/static_pages/about.html.erb</p>
+<h1>About</h1>
+<p>This intro project will be a mockup of an adoption website for dogs making use of the Dog API
+  (found here: https://dog.ceo/dog-api/). Along with this API, I will be using the 'faker' ruby gem
+  to generate more data as needed. The Dog API is structured within a JSON which can then be drilled
+  down into to extract information such as the breed, any associated sub-breeds, an image of those breeds, etc.
+  The database tables required will be as follows.
+
+  <header>Dogs</header>
+  <ul>
+    <li>Dog_id - Integer</li>
+    <li>Name - String</li>
+    <li>Age - Integer</li>
+    <li>Gender - String</li>
+    <li>Breed_id - Integer (FK to Breeds table)</li>
+    <li>Description - Text</li>
+    <li>Image_url - String</li>
+    <li>Created_at - Datetime</li>
+    <li>Updated_at - Datetime</li>
+  </ul>
+
+  <header>Breeds</header>
+  <ul>
+    <li>Breed_id - Integer</li>
+    <li>Name - String</li>
+    <li>Created_at - Datetime</li>
+    <li>Updated_at - Datetime</li>
+  </ul>
+
+  <header>Users</header>
+  <ul>
+    <li>User_id - Integer</li>
+    <li>Name - String</li>
+    <li>Address - String</li>
+    <li>City - String</li>
+    <li>Province - String</li>
+    <li>Phone_number - String</li>
+    <li>Email - String</li>
+    <li>Created_at - Datetime</li>
+    <li>Updated_at - Datetime</li>
+  </ul>
+
+  <header>Adoptions</header>
+  <ul>
+    <li>Adoption_id - Integer</li>
+    <li>Dog_id - Integer (FK to Dogs)</li>
+    <li>User_id - Integer (FK to Users)</li>
+    <li>Adoption_date - Datetime</li>
+    <li>Created_at - Datetime</li>
+    <li>Updated_at - Datetime</li>
+  </ul>
+</p>
+

@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  root "static_pages#home"
+  get "about", to: "static_pages#about"
   get "static_pages/home"
-  get "static_pages/about"
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
