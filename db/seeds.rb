@@ -14,7 +14,7 @@ breed_uri = URI(breed_url)
 breed_response = Net::HTTP.get(breed_uri)
 breeds = JSON.parse(breed_response)['message'].keys
 
-breeds.each do |breed|
+breeds.each do |breed, sub_breeds|
   new_breed = Breed.find_or_create_by(name: breed)
 
   image_url = "https://dog.ceo/api/breed/#{breed}/images/random"
@@ -30,6 +30,13 @@ breeds.each do |breed|
     description: Faker::Games::StreetFighter.quote,
     image_url: image
   )
+
+  if sub_breeds.any?
+    sub_breeds.each do |sub_breed|
+      full_breed = "#{breed} #{sub_breed}"
+      new_sub_breed = Breed.find_or_create_by(name: full_breed)
+    end
+  end
 end
 
 puts "Created #{Breed.count} Breeds."
