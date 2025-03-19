@@ -1,0 +1,7 @@
+<h3 class="title is-4">All Dog Breeds</h3>
+
+<p>
+  <% @breeds.each do |breed| %>
+    <%= link_to breed.name, breed, class: 'button is-link' %>
+  <% end %>
+</p>
