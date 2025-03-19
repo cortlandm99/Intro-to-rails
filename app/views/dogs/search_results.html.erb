@@ -1,0 +1,9 @@
+<p>
+  Your search for '<%= @query %>' returned <%= pluralize(@dogs.size, 'result') %>.
+</p>
+
+<div class="columns is-multiline">
+  <%= render partial: 'dog',
+            collection: @dogs,
+            locals: { name_is_link: true } %>
+</div>

@@ -1,0 +1,31 @@
+<div class="column is-one-third">
+  <% if dog.image.present? %>
+    <div class="card-image">
+      <figure class="image is-4by3">
+        <%= image_tag dog.image %>
+      </figure>
+    </div>
+  <% end %>
+  <div class="card dog">
+    <div class="card-content">
+    <p class="title is-4">
+      <% if name_is_link %>
+        <%= link_to dog.name, dog %>
+      <% else %>
+        <%= dog.name %>
+      <% end %>
+    </p>
+    <ul>
+      <li>
+        <strong>Age:</strong> <%= dog.age %>
+      </li>
+      <li>
+        <strong>Gender:</strong> <%= dog.gender%>
+      </li>
+      <li>
+        <strong>About Me:</strong> <%= dog.description %>
+      </li>
+    </ul>
+    </div>
+  </div>
+</div>
