@@ -452,6 +452,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   kamal
+  kaminari
   net-http
   propshaft
   puma (>= 5.0)
