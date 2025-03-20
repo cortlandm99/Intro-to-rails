@@ -1,12 +1,13 @@
 <h1>Our Dogs</h1>
 <ul>
   <% @dogs.each do |dog| %>
-    <li>
-      <img> <%= dog.image_url %> <br>
-      <strong>Name:</strong> <%= dog.name %><br>
+    <ul>
+      <h1><%= link_to dog.name, dog %></h1>
+      <img src="<%= dog.image_url %>"> <br>
       <strong>Breed:</strong> <%= dog.breed.name.capitalize %><br>
       <strong>Age:</strong> <%= dog.age %> <br>
+      <strong>Gender:</strong> <%= dog.gender %> <br>
       <strong>About Me:</strong> <%= dog.description %>
-    </li>
+    </ul>
   <% end %>
 </ul>
