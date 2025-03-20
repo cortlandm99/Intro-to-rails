@@ -39,7 +39,7 @@ breeds.each do |breed, sub_breeds|
       image_url = "https://dog.ceo/api/breed/#{sub_breed}/images/random"
       image_uri = URI(image_url)
       image_response = Net::HTTP.get(image_uri)
-      image = JSON.parse(image_response)
+      image = JSON.parse(image_response)["message"]
 
       Dog.create(
         name: Faker::Creature::Dog.name,
@@ -55,5 +55,3 @@ end
 
 puts "Created #{Breed.count} Breeds."
 puts "Created #{Dog.count} Dogs."
-
-puts "hi github"

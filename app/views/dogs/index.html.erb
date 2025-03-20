@@ -1,2 +1,12 @@
-<h1>Dogs#index</h1>
-<p>Find me in app/views/dogs/index.html.erb</p>
+<h1>Our Dogs</h1>
+<ul>
+  <% @dogs.each do |dog| %>
+    <li>
+      <img> <%= dog.image_url %> <br>
+      <strong>Name:</strong> <%= dog.name %><br>
+      <strong>Breed:</strong> <%= dog.breed.name.capitalize %><br>
+      <strong>Age:</strong> <%= dog.age %> <br>
+      <strong>About Me:</strong> <%= dog.description %>
+    </li>
+  <% end %>
+</ul>

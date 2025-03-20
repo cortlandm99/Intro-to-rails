@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get "dogs/index"
   root "dogs#index"
   get "about", to: "static_pages#about"
-  get "home", to: "static_pages#home"
+  get "home", to: "dogs#index"
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
