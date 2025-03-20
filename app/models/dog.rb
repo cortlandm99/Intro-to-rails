@@ -14,4 +14,6 @@ class Dog < ApplicationRecord
   def self.ransackable_associations(auth_object = nil)
     [ "adoptions", "breed", "users" ]
   end
+
+  Dog.page(1).per(10)
 end

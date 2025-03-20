@@ -28,8 +28,8 @@
 
   <body>
     <section class="section">
-      <h1 class="title"><%= link_to 'Intro to Rails', root_path %></h1>
-      <h2 class="subtitle">Look at all the pretty dogs standing in a <strong>row, row, row</strong>.</h2>
+      <h1 class="title"><%= link_to 'Paw Pals', root_path %></h1>
+      <h2 class="subtitle">We have dogs.</h2>
       <%= form_with(url: search_results_dogs_path, method: "get", local: true) do %>
         <%= label_tag(:query, "Search for:") %>
         <%= text_field_tag(:query) %>
