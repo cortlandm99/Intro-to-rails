@@ -18,15 +18,15 @@
       <% if dog.image_url.present? %>
         <div class="card-image">
           <figure class="image is-4by3">
-            <img src="<%= dog.image_url %>">
+            <img src="<%= dog.image_url %>" alt="<%= dog.name %>">
           </figure>
         </div>
       <% end %>
       <ul>
-        <strong>Breed:</strong> <%= dog.breed.name.capitalize %><br>
-        <strong>Age:</strong> <%= dog.age %> <br>
-        <strong>Gender:</strong> <%= dog.gender %> <br>
-        <strong>About Me:</strong> <%= dog.description %>
+        <li><strong>Breed:</strong> <%= dog.breed.name.capitalize %></li>
+        <li><strong>Age:</strong> <%= dog.age %></li>
+        <li><strong>Gender:</strong> <%= dog.gender %></li>
+        <li><strong>About Me:</strong> <%= dog.description %></li>
       </ul>
     </div>
   </div>

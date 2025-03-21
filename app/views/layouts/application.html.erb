@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title><%= content_for(:title) || "Intro To Rails" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -22,12 +22,12 @@
     <%# stylesheet_link_tag :app, "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
     <nav>
-      <li><%= link_to "Home", home_path %></li>
-      <li><%= link_to "About", about_path %></li>
+      <ul>
+        <li><%= link_to "Home", home_path %></li>
+        <li><%= link_to "About", about_path %></li>
+      </ul>
     </nav>
-  </head>
 
-  <body>
     <section class="section">
       <h1 class="title"><%= link_to 'Paw Pals', root_path %></h1>
       <h2 class="subtitle">We have dogs.</h2>
@@ -40,5 +40,4 @@
     <section class="section">
       <%= yield %>
     </section>
-  </body>
 </html>
