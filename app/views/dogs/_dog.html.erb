@@ -1,26 +1,33 @@
 <div class="column is-one-third">
   <div class="card dog">
     <div class="card-content">
-    <h1 class="title is-4">
-      <% if name_is_link %>
-        <%= link_to dog.name, dog %>
-      <% else %>
-        <%= dog.name %>
+      <h1 class="title is-4">
+        <% if name_is_link %>
+          <%= link_to dog.name, dog %>
+        <% else %>
+          <%= dog.name %> -
+          <% if dog.age < 2 %>
+          <span class="">Puppy</span>
+          <% elsif dog.age > 7 %>
+            <span class="">Senior Dog</span>
+          <% else %>
+            <span class="">Adult Dog</span>
+          <% end %>
+        <% end %>
+      </h1>
+      <% if dog.image_url.present? %>
+        <div class="card-image">
+          <figure class="image is-4by3">
+            <img src="<%= dog.image_url %>">
+          </figure>
+        </div>
       <% end %>
-    </h1>
-    <% if dog.image_url.present? %>
-    <div class="card-image">
-      <figure class="image is-4by3">
-        <img src="<%= dog.image_url %>">
-      </figure>
-    </div>
-    <% end %>
-    <ul>
-      <strong>Breed:</strong> <%= dog.breed.name.capitalize %><br>
-      <strong>Age:</strong> <%= dog.age %> <br>
-      <strong>Gender:</strong> <%= dog.gender %> <br>
-      <strong>About Me:</strong> <%= dog.description %>
-    </ul>
+      <ul>
+        <strong>Breed:</strong> <%= dog.breed.name.capitalize %><br>
+        <strong>Age:</strong> <%= dog.age %> <br>
+        <strong>Gender:</strong> <%= dog.gender %> <br>
+        <strong>About Me:</strong> <%= dog.description %>
+      </ul>
     </div>
   </div>
 </div>

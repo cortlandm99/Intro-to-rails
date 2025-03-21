@@ -5,7 +5,14 @@
 <ul>
   <% @dogs.each do |dog| %>
     <ul>
-      <h1><%= link_to dog.name, dog %></h1>
+      <h1><%= link_to dog.name, dog %> -
+      <% if dog.age < 2 %>
+        <span class="">Puppy</span>
+      <% elsif dog.age > 7 %>
+        <span class="">Senior Dog</span>
+      <% else %>
+        <span class="">Adult Dog</span>
+      <% end %></h1>
       <img src="<%= dog.image_url %>"> <br>
       <strong>Breed:</strong> <%= dog.breed.name.capitalize %><br>
       <strong>Age:</strong> <%= dog.age %> <br>
