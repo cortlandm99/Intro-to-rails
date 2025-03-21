@@ -36,7 +36,7 @@ breeds.each do |breed, sub_breeds|
       full_breed = "#{breed} #{sub_breed}"
       new_sub_breed = Breed.find_or_create_by(name: full_breed)
 
-      image_url = "https://dog.ceo/api/breed/#{sub_breed}/images/random"
+      image_url = "https://dog.ceo/api/breed/#{breed}/#{sub_breed}/images/random"
       image_uri = URI(image_url)
       image_response = Net::HTTP.get(image_uri)
       image = JSON.parse(image_response)["message"]
