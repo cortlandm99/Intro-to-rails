@@ -1,7 +1,5 @@
 <h1 class="title has-text-centered">Our Dogs</h1>
 
-<%= paginate @dogs %>
-
 <div class="columns is-multiline">
   <% @dogs.each do |dog| %>
     <div class="column is-one-third">
@@ -36,3 +34,4 @@
   <% end %>
 </div>
 
+<%= paginate @dogs %>
