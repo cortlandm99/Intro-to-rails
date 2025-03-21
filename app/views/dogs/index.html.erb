@@ -1,23 +1,38 @@
-<h1>Our Dogs</h1>
+<h1 class="title has-text-centered">Our Dogs</h1>
 
 <%= paginate @dogs %>
 
-<ul>
+<div class="columns is-multiline">
   <% @dogs.each do |dog| %>
-    <ul>
-      <h1><%= link_to dog.name, dog %> -
-      <% if dog.age < 2 %>
-        <span class="">Puppy</span>
-      <% elsif dog.age > 7 %>
-        <span class="">Senior Dog</span>
-      <% else %>
-        <span class="">Adult Dog</span>
-      <% end %></h1>
-      <img src="<%= dog.image_url %>"> <br>
-      <strong>Breed:</strong> <%= dog.breed.name.capitalize %><br>
-      <strong>Age:</strong> <%= dog.age %> <br>
-      <strong>Gender:</strong> <%= dog.gender %> <br>
-      <strong>About Me:</strong> <%= dog.description %>
-    </ul>
+    <div class="column is-one-third">
+      <div class="card">
+        <div class="card-image">
+          <% if dog.image_url.present? %>
+            <figure class="image is-4by3">
+              <img src="<%= dog.image_url %>" alt="<%= dog.name %>">
+            </figure>
+          <% end %>
+        </div>
+        <div class="card-content">
+          <h2 class="title is-4">
+            <%= link_to dog.name, dog %> -
+            <% if dog.age < 2 %>
+              <span class="tag is-success">Puppy</span>
+            <% elsif dog.age > 7 %>
+              <span class="tag is-warning">Senior Dog</span>
+            <% else %>
+              <span class="tag is-primary">Adult Dog</span>
+            <% end %>
+          </h2>
+          <ul>
+            <li><strong>Breed:</strong> <%= dog.breed.name.capitalize %></li>
+            <li><strong>Age:</strong> <%= dog.age %></li>
+            <li><strong>Gender:</strong> <%= dog.gender %></li>
+          </ul>
+          <p><strong>About Me:</strong> <%= dog.description %></p>
+        </div>
+      </div>
+    </div>
   <% end %>
-</ul>
+</div>
+

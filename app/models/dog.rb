@@ -15,5 +15,5 @@ class Dog < ApplicationRecord
     [ "adoptions", "breed", "users" ]
   end
 
-  Dog.page(1).per(10)
+  Dog.page(1).per(9)
 end
